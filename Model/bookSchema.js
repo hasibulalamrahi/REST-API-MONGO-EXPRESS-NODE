@@ -2,7 +2,7 @@
 //schema is structuring all the data following a certain structure
 
 const mongoose = require('mongoose');
-const bookSchema = mongoose.Schema({
+const bookSchema = new mongoose.Schema({
     ISBN :{
         type : String,
         required:true,
@@ -38,4 +38,6 @@ const bookSchema = mongoose.Schema({
     }
 });
 
-module.exports = bookSchema;
+// module.exports = bookSchema;
+const BookSchema= mongoose.model('Book',bookSchema);
+module.exports = BookSchema;
